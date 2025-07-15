@@ -3257,6 +3257,8 @@
 		<Metadata name="CommonModule.гкс_ПриемкаНаПЛККлиент.Module" id="5a3dbcd3-cf12-4155-9780-9037748ad154.0" configVersion="7c38c5c84335504883f66aba9d09f93f00000000"/>
 		<Metadata name="CommonModule.гкс_ПриемкаНаПЛКСервер" id="d0da68be-a2a4-411b-87c5-6301f13fa9a1" configVersion="e6c2698018cb3541a3ab526fe6fa532500000000"/>
 		<Metadata name="CommonModule.гкс_ПриемкаНаПЛКСервер.Module" id="d0da68be-a2a4-411b-87c5-6301f13fa9a1.0" configVersion="073d53a61515f44c9d493c078b8cc75000000000"/>
+		<Metadata name="CommonModule.гкс_ПодборЛабораторногоАнализа" id="e7c2c5f2-7d84-4c9b-8a5b-9e4f3a1b2c3d" configVersion="0000000000000000000000000000000000000000"/>
+		<Metadata name="CommonModule.гкс_ПодборЛабораторногоАнализа.Module" id="e7c2c5f2-7d84-4c9b-8a5b-9e4f3a1b2c3d.0" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="CommonModule.гкс_ПриемкаТранспорта" id="659ebcfe-08d0-4ba2-8305-7608f3b110af" configVersion="f26b289f8deabe4291b5d4e4736b943600000000"/>
 		<Metadata name="CommonModule.гкс_ПриемкаТранспорта.Module" id="659ebcfe-08d0-4ba2-8305-7608f3b110af.0" configVersion="5db0a734f37e0b4c9092c6d07c7524ca00000000"/>
 		<Metadata name="CommonModule.гкс_ПриемкаТранспортаВызовСервера" id="25e2ba53-d4f5-489e-9be0-1eba95773640" configVersion="b5d3c2d19e7a3642acc4ab119f73066c00000000"/>

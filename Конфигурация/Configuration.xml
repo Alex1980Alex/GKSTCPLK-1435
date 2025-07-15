@@ -1168,6 +1168,7 @@
 			<CommonModule>гкс_ОчередьСообщенийRMQСлужебный</CommonModule>
 			<CommonModule>гкс_ПриемкаНаПЛККлиент</CommonModule>
 			<CommonModule>гкс_ПриемкаНаПЛКСервер</CommonModule>
+			<CommonModule>гкс_ПодборЛабораторногоАнализа</CommonModule>
 			<CommonModule>гкс_ПриемкаТранспорта</CommonModule>
 			<CommonModule>гкс_ПриемкаТранспортаВызовСервера</CommonModule>
 			<CommonModule>гкс_ПриемкаТранспортаПовтИсп</CommonModule>
