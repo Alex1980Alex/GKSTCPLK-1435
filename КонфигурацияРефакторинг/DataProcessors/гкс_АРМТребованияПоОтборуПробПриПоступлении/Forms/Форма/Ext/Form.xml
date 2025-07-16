@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтборы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="ОтборТочкаМаршрута" id="3">
+					<DataPath>ОтборТочкаМаршрута</DataPath>
+					<ContextMenu name="ОтборТочкаМаршрутаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ОтборТочкаМаршрутаРасширеннаяПодсказка" id="5"/>
+					<Events>
+						<Event name="OnChange">ОтборТочкаМаршрутаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОтборВидПеревозки" id="6">
+					<DataPath>ОтборНоменклатура</DataPath>
+					<ContextMenu name="ОтборВидПеревозкиКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ОтборВидПеревозкиРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">ОтборВидПеревозкиПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТранспортныеСредства" id="9">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТранспортныеСредства</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТранспортныеСредстваКонтекстноеМеню" id="10"/>
+			<AutoCommandBar name="ТранспортныеСредстваКоманднаяПанель" id="11">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ТранспортныеСредстваКомандаОбновить" id="42">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Command.КомандаОбновить</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.Refresh</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ТранспортныеСредстваКомандаОбновитьРасширеннаяПодсказка" id="43"/>
+					</Button>
+					<Button name="ТранспортныеСредстваКомандаСформироватьЗаданиеНаПроверкуКачества" id="40">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСформироватьЗаданиеНаПроверкуКачества</CommandName>
+						<ExtendedTooltip name="ТранспортныеСредстваКомандаСформироватьЗаданиеНаПроверкуКачестваРасширеннаяПодсказка" id="41"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТранспортныеСредстваРасширеннаяПодсказка" id="12"/>
+			<SearchStringAddition name="ТранспортныеСредстваСтрокаПоиска" id="13">
+				<AdditionSource>
+					<Item>ТранспортныеСредства</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТранспортныеСредстваСтрокаПоискаКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="ТранспортныеСредстваСтрокаПоискаРасширеннаяПодсказка" id="15"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТранспортныеСредстваСостояниеПросмотра" id="16">
+				<AdditionSource>
+					<Item>ТранспортныеСредства</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТранспортныеСредстваСостояниеПросмотраКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="ТранспортныеСредстваСостояниеПросмотраРасширеннаяПодсказка" id="18"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТранспортныеСредстваУправлениеПоиском" id="19">
+				<AdditionSource>
+					<Item>ТранспортныеСредства</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТранспортныеСредстваУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="ТранспортныеСредстваУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">ТранспортныеСредстваПередНачаломДобавления</Event>
+				<Event name="BeforeDeleteRow">ТранспортныеСредстваПередУдалением</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="ТранспортныеСредстваПризнакВыбора" id="22">
+					<DataPath>ТранспортныеСредства.ПризнакВыбора</DataPath>
+					<Visible>false</Visible>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.AppearanceCheckIcon</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.Успешно</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="ТранспортныеСредстваПризнакВыбораКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПризнакВыбораРасширеннаяПодсказка" id="24"/>
+				</PictureField>
+				<InputField name="ТранспортныеСредстваДатаПогрузки" id="25">
+					<DataPath>ТранспортныеСредства.ДатаПогрузки</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваДатаПогрузкиКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ТранспортныеСредстваДатаПогрузкиРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="ТранспортныеСредстваКонтрагент" id="28">
+					<DataPath>ТранспортныеСредства.Контрагент</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваКонтрагентКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ТранспортныеСредстваКонтрагентРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ТранспортныеСредстваНоменклатура" id="31">
+					<DataPath>ТранспортныеСредства.Номенклатура</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваНоменклатураКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ТранспортныеСредстваНоменклатураРасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<InputField name="ТранспортныеСредстваСтанцияОтправления" id="34">
+					<DataPath>ТранспортныеСредства.СтанцияОтправления</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваСтанцияОтправленияКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ТранспортныеСредстваСтанцияОтправленияРасширеннаяПодсказка" id="36"/>
+				</InputField>
+				<InputField name="ТранспортныеСредстваТранспортноеСредство" id="37">
+					<DataPath>ТранспортныеСредства.ТранспортноеСредство</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваТранспортноеСредствоКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ТранспортныеСредстваТранспортноеСредствоРасширеннаяПодсказка" id="39"/>
+				</InputField>
+				<InputField name="ТранспортныеСредстваТранспортныйДокумент" id="104">
+					<DataPath>ТранспортныеСредства.ТранспортныйДокумент</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваТранспортныйДокументКонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="ТранспортныеСредстваТранспортныйДокументРасширеннаяПодсказка" id="106"/>
+				</InputField>
+				<InputField name="ТранспортныеСредстваЗаданиеНаПроверку" id="107">
+					<DataPath>ТранспортныеСредства.ЗаданиеНаПроверку</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТранспортныеСредстваЗаданиеНаПроверкуКонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="ТранспортныеСредстваЗаданиеНаПроверкуРасширеннаяПодсказка" id="109"/>
+				</InputField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель1" id="44">
+					<DataPath>ТранспортныеСредства.Показатель1</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель1КонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель1РасширеннаяПодсказка" id="46"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель2" id="47">
+					<DataPath>ТранспортныеСредства.Показатель2</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель2КонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель2РасширеннаяПодсказка" id="49"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель3" id="50">
+					<DataPath>ТранспортныеСредства.Показатель3</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель3КонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель3РасширеннаяПодсказка" id="52"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель4" id="53">
+					<DataPath>ТранспортныеСредства.Показатель4</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель4КонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель4РасширеннаяПодсказка" id="55"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель5" id="56">
+					<DataPath>ТранспортныеСредства.Показатель5</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель5КонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель5РасширеннаяПодсказка" id="58"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель6" id="59">
+					<DataPath>ТранспортныеСредства.Показатель6</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель6КонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель6РасширеннаяПодсказка" id="61"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель7" id="62">
+					<DataPath>ТранспортныеСредства.Показатель7</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель7КонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель7РасширеннаяПодсказка" id="64"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель8" id="65">
+					<DataPath>ТранспортныеСредства.Показатель8</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель8КонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель8РасширеннаяПодсказка" id="67"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель9" id="68">
+					<DataPath>ТранспортныеСредства.Показатель9</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель9КонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель9РасширеннаяПодсказка" id="70"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель10" id="71">
+					<DataPath>ТранспортныеСредства.Показатель10</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель10КонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель10РасширеннаяПодсказка" id="73"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель11" id="74">
+					<DataPath>ТранспортныеСредства.Показатель11</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель11КонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель11РасширеннаяПодсказка" id="76"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель12" id="77">
+					<DataPath>ТранспортныеСредства.Показатель12</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель12КонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель12РасширеннаяПодсказка" id="79"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель13" id="80">
+					<DataPath>ТранспортныеСредства.Показатель13</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель13КонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель13РасширеннаяПодсказка" id="82"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель14" id="101">
+					<DataPath>ТранспортныеСредства.Показатель14</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель14КонтекстноеМеню" id="102"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель14РасширеннаяПодсказка" id="103"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель15" id="98">
+					<DataPath>ТранспортныеСредства.Показатель15</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель15КонтекстноеМеню" id="99"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель15РасширеннаяПодсказка" id="100"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель16" id="95">
+					<DataPath>ТранспортныеСредства.Показатель16</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель16КонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель16РасширеннаяПодсказка" id="97"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель17" id="92">
+					<DataPath>ТранспортныеСредства.Показатель17</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель17КонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель17РасширеннаяПодсказка" id="94"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель18" id="89">
+					<DataPath>ТранспортныеСредства.Показатель18</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель18КонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель18РасширеннаяПодсказка" id="91"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель19" id="86">
+					<DataPath>ТранспортныеСредства.Показатель19</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель19КонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель19РасширеннаяПодсказка" id="88"/>
+				</CheckBoxField>
+				<CheckBoxField name="ТранспортныеСредстваПоказатель20" id="83">
+					<DataPath>ТранспортныеСредства.Показатель20</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТранспортныеСредстваПоказатель20КонтекстноеМеню" id="84"/>
+					<ExtendedTooltip name="ТранспортныеСредстваПоказатель20РасширеннаяПодсказка" id="85"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.гкс_АРМТребованияПоОтборуПробПриПоступлении</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ОтборТочкаМаршрута" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Точка маршрута</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.гкс_ТочкиМаршрута</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборНоменклатура" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокТранспортныхСредств" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список транспортных средств</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЦБТ_ТранспортныйДокументТранспортныеСредства.ТранспортноеСредство КАК ТранспортноеСредство,
+	ЦБТ_ТранспортныйДокумент.Дата КАК ДатаПогрузки,
+	гкс_ТочкиМаршрута.КодСтанцииЖД КАК СтанцияОтправления,
+	ЦБТ_ТранспортныйДокументТранспортныеСредства.Номенклатура КАК Номенклатура,
+	ЦБТ_ТранспортныйДокумент.Контрагент КАК Контрагент
+ИЗ
+	Документ.гкс_ТранспортныйДокумент.ТранспортныеСредства КАК ЦБТ_ТранспортныйДокументТранспортныеСредства
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.гкс_ТранспортныйДокумент КАК ЦБТ_ТранспортныйДокумент
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.гкс_ТочкиМаршрута КАК гкс_ТочкиМаршрута
+			ПО ЦБТ_ТранспортныйДокумент.ПунктПогрузки = гкс_ТочкиМаршрута.Ссылка
+		ПО ЦБТ_ТранспортныйДокументТранспортныеСредства.Ссылка = ЦБТ_ТранспортныйДокумент.Ссылка
+ГДЕ
+	ЦБТ_ТранспортныйДокумент.Дата &gt;= &amp;ДатаНачалаПоиска
+	И ЦБТ_ТранспортныйДокумент.ПунктРазгрузки = &amp;ОтборТочкаМаршрута
+	И ЦБТ_ТранспортныйДокумент.ВидПеревозки = &amp;ВидПеревозки</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТранспортноеСредство</dcssch:dataPath>
+					<dcssch:field>ТранспортноеСредство</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаПогрузки</dcssch:dataPath>
+					<dcssch:field>ДатаПогрузки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата погрузки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номенклатура</dcssch:dataPath>
+					<dcssch:field>Номенклатура</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Контрагент</dcssch:dataPath>
+					<dcssch:field>Контрагент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтанцияОтправления</dcssch:dataPath>
+					<dcssch:field>СтанцияОтправления</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Станция отправления</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Parameter>
+					<dcssch:name>ОтборТочкаМаршрута</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор точка маршрута</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.гкс_ТочкиМаршрута</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ВидПеревозки</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид перевозки</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:EnumRef.гкс_ТипыТранспортныхСредствДоставки</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ДатаНачалаПоиска</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата начала поиска</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТранспортныеСредства" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Транспортные средства</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПризнакВыбора" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Признак выбора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаПогрузки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата погрузки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Контрагент" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СтанцияОтправления" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Станция отправления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.гкс_КлассификаторСтанцийЖД</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТранспортноеСредство" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Транспортное средство</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ТранспортныеСредства</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель1" id="7">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель2" id="8">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель3" id="9">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель4" id="10">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель5" id="11">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель6" id="12">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель7" id="13">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель8" id="14">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель9" id="15">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель10" id="16">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель11" id="17">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель12" id="18">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель13" id="19">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель14" id="20">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель15" id="21">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель16" id="22">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель17" id="23">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель18" id="24">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель19" id="25">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатель20" id="26">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТранспортныйДокумент" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Транспортный документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.гкс_ТранспортныйДокумент</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗаданиеНаПроверку" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задание на проверку</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.гкс_ЗаданияНаПроверкуКачества</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаСформироватьЗаданиеНаПроверкуКачества" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задание на проверку качества</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда сформировать задание на проверку качества</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСформироватьЗаданиеНаПроверкуКачества</Action>
+		</Command>
+		<Command name="КомандаОбновить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F5</Shortcut>
+			<Action>КомандаОбновить</Action>
+		</Command>
+	</Commands>
+</Form>
